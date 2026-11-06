@@ -1,0 +1,383 @@
+{
+  "threshold": 0.5,
+  "features": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "categories": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "SeniorCitizen": [
+      "0",
+      "1"
+    ],
+    "Partner": [
+      "No",
+      "Yes"
+    ],
+    "Dependents": [
+      "No",
+      "Yes"
+    ],
+    "PhoneService": [
+      "No",
+      "Yes"
+    ],
+    "MultipleLines": [
+      "No",
+      "Yes",
+      "No phone service"
+    ],
+    "InternetService": [
+      "DSL",
+      "Fiber optic",
+      "No"
+    ],
+    "OnlineSecurity": [
+      "No",
+      "Yes",
+      "No internet service"
+    ],
+    "OnlineBackup": [
+      "No",
+      "Yes",
+      "No internet service"
+    ],
+    "DeviceProtection": [
+      "No",
+      "Yes",
+      "No internet service"
+    ],
+    "TechSupport": [
+      "No",
+      "Yes",
+      "No internet service"
+    ],
+    "StreamingTV": [
+      "No",
+      "Yes",
+      "No internet service"
+    ],
+    "StreamingMovies": [
+      "No",
+      "Yes",
+      "No internet service"
+    ],
+    "Contract": [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    "PaperlessBilling": [
+      "No",
+      "Yes"
+    ],
+    "PaymentMethod": [
+      "Electronic check",
+      "Mailed check",
+      "Bank transfer (automatic)",
+      "Credit card (automatic)"
+    ]
+  },
+  "model_name": "Logistic Regression",
+  "metrics": {
+    "recall": 0.7887700534759359,
+    "precision": 0.5042735042735043,
+    "f1": 0.6152241918665277,
+    "accuracy": 0.7381121362668559,
+    "roc_auc": 0.8420341522643312,
+    "pr_auc": 0.635133584766624,
+    "flagged_fraction": 0.4151880766501065,
+    "tn": 745,
+    "fp": 290,
+    "fn": 79,
+    "tp": 295
+  },
+  "test_confusion_matrix": [
+    [
+      745,
+      290
+    ],
+    [
+      79,
+      295
+    ]
+  ],
+  "test_size": 1409,
+  "train_size": 5634,
+  "best_params": {
+    "model__C": 1,
+    "model__penalty": "l1"
+  },
+  "data_sha256": "a0ea74c48c1063be89a73ce3fb868593604c0129f2bf581934f04983d728b3b5",
+  "sklearn_version": "1.6.1",
+  "seed": 42,
+  "training_ranges": {
+    "tenure": [
+      0.0,
+      72.0
+    ],
+    "MonthlyCharges": [
+      18.4,
+      118.75
+    ],
+    "TotalCharges": [
+      0.0,
+      8684.8
+    ]
+  },
+  "training_medians": {
+    "tenure": 29.0,
+    "MonthlyCharges": 70.5,
+    "TotalCharges": 1394.925
+  },
+  "bootstrap_95_ci": {
+    "recall": [
+      0.7441860465116279,
+      0.8258567759127496
+    ],
+    "precision": [
+      0.4629508435136707,
+      0.54360103626943
+    ]
+  },
+  "cv_comparison": [
+    {
+      "model": "Logistic Regression",
+      "class_weight": "None",
+      "recall": 0.5431438127090301,
+      "precision": 0.6534985534760666,
+      "f1": 0.5925421246932572,
+      "roc_auc": 0.8461369116740869,
+      "pr_auc": 0.6614572238453722,
+      "accuracy": 0.802273597677545,
+      "recall_std": 0.04110312105882869
+    },
+    {
+      "model": "Logistic Regression",
+      "class_weight": "balanced",
+      "recall": 0.8013377926421403,
+      "precision": 0.5169348953946274,
+      "f1": 0.6282663278752133,
+      "roc_auc": 0.845988287583961,
+      "pr_auc": 0.6600419905398098,
+      "accuracy": 0.7484929101766584,
+      "recall_std": 0.037932968237479145
+    },
+    {
+      "model": "Decision Tree",
+      "class_weight": "None",
+      "recall": 0.5117056856187291,
+      "precision": 0.6358135525416438,
+      "f1": 0.5645664935938528,
+      "roc_auc": 0.8246638413944914,
+      "pr_auc": 0.6218664350079365,
+      "accuracy": 0.7914480828241406,
+      "recall_std": 0.05120443935519636
+    },
+    {
+      "model": "Decision Tree",
+      "class_weight": "balanced",
+      "recall": 0.7872909698996656,
+      "precision": 0.502318566477839,
+      "f1": 0.6128597397865352,
+      "roc_auc": 0.8252581541092754,
+      "pr_auc": 0.6187315897581886,
+      "accuracy": 0.7355394238937369,
+      "recall_std": 0.02163339348333942
+    },
+    {
+      "model": "Random Forest",
+      "class_weight": "None",
+      "recall": 0.5063545150501672,
+      "precision": 0.6778561211878326,
+      "f1": 0.57935803695358,
+      "roc_auc": 0.8458660654965426,
+      "pr_auc": 0.6609785389010815,
+      "accuracy": 0.8049360048289916,
+      "recall_std": 0.025259140586620994
+    },
+    {
+      "model": "Random Forest",
+      "class_weight": "balanced",
+      "recall": 0.7478260869565216,
+      "precision": 0.5493683214690643,
+      "f1": 0.6331455606679907,
+      "roc_auc": 0.8468139196656648,
+      "pr_auc": 0.6596474761173753,
+      "accuracy": 0.7701475647792517,
+      "recall_std": 0.028583091129393338
+    }
+  ],
+  "segments": {
+    "Contract": [
+      {
+        "Contract": "Month-to-month",
+        "customers": 3875,
+        "churners": 1655,
+        "churn_rate": 0.4270967741935484
+      },
+      {
+        "Contract": "One year",
+        "customers": 1473,
+        "churners": 166,
+        "churn_rate": 0.11269517990495587
+      },
+      {
+        "Contract": "Two year",
+        "customers": 1695,
+        "churners": 48,
+        "churn_rate": 0.02831858407079646
+      }
+    ],
+    "TenureBand": [
+      {
+        "TenureBand": "0\u201312 months",
+        "customers": 2186,
+        "churners": 1037,
+        "churn_rate": 0.47438243366880145
+      },
+      {
+        "TenureBand": "13\u201324 months",
+        "customers": 1024,
+        "churners": 294,
+        "churn_rate": 0.287109375
+      },
+      {
+        "TenureBand": "25\u201348 months",
+        "customers": 1594,
+        "churners": 325,
+        "churn_rate": 0.2038895859473024
+      },
+      {
+        "TenureBand": "49\u201372 months",
+        "customers": 2239,
+        "churners": 213,
+        "churn_rate": 0.09513175524787852
+      }
+    ],
+    "PaymentMethod": [
+      {
+        "PaymentMethod": "Bank transfer (automatic)",
+        "customers": 1544,
+        "churners": 258,
+        "churn_rate": 0.16709844559585493
+      },
+      {
+        "PaymentMethod": "Credit card (automatic)",
+        "customers": 1522,
+        "churners": 232,
+        "churn_rate": 0.15243101182654403
+      },
+      {
+        "PaymentMethod": "Electronic check",
+        "customers": 2365,
+        "churners": 1071,
+        "churn_rate": 0.4528541226215645
+      },
+      {
+        "PaymentMethod": "Mailed check",
+        "customers": 1612,
+        "churners": 308,
+        "churn_rate": 0.19106699751861042
+      }
+    ],
+    "InternetService": [
+      {
+        "InternetService": "DSL",
+        "customers": 2421,
+        "churners": 459,
+        "churn_rate": 0.1895910780669145
+      },
+      {
+        "InternetService": "Fiber optic",
+        "customers": 3096,
+        "churners": 1297,
+        "churn_rate": 0.4189276485788114
+      },
+      {
+        "InternetService": "No",
+        "customers": 1526,
+        "churners": 113,
+        "churn_rate": 0.07404980340760157
+      }
+    ],
+    "TechSupport": [
+      {
+        "TechSupport": "No",
+        "customers": 3473,
+        "churners": 1446,
+        "churn_rate": 0.4163547365390153
+      },
+      {
+        "TechSupport": "No internet service",
+        "customers": 1526,
+        "churners": 113,
+        "churn_rate": 0.07404980340760157
+      },
+      {
+        "TechSupport": "Yes",
+        "customers": 2044,
+        "churners": 310,
+        "churn_rate": 0.15166340508806261
+      }
+    ]
+  },
+  "threshold_tradeoff_training": [
+    {
+      "threshold": 0.2,
+      "recall": 0.9558528428093646,
+      "precision": 0.38548691664418666,
+      "flagged_fraction": 0.6579694710685126
+    },
+    {
+      "threshold": 0.3,
+      "recall": 0.9264214046822743,
+      "precision": 0.4232885085574572,
+      "flagged_fraction": 0.5807596734114306
+    },
+    {
+      "threshold": 0.4,
+      "recall": 0.8655518394648829,
+      "precision": 0.470203488372093,
+      "flagged_fraction": 0.48846290379836704
+    },
+    {
+      "threshold": 0.5,
+      "recall": 0.8020066889632107,
+      "precision": 0.516365202411714,
+      "flagged_fraction": 0.41214057507987223
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.717056856187291,
+      "precision": 0.5696068012752391,
+      "flagged_fraction": 0.33404330848420305
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.5926421404682274,
+      "precision": 0.6292613636363636,
+      "flagged_fraction": 0.2499112531061413
+    }
+  ]
+}
